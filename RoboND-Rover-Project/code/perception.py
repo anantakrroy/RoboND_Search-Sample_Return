@@ -120,9 +120,9 @@ def perception_step(Rover):
     rocks = rockFind(warped, rgb_thresh=(120,120,50))
     
     # 4) Update Rover.vision_image (this will be displayed on left side of screen)
-    Rover.vision_image[:,:,0] = obstacle
-    Rover.vision_image[:,:,1] = rocks
-    Rover.vision_image[:,:,2] = nav_terrain
+    Rover.vision_image[:,:,0] = obstacle * 255
+    Rover.vision_image[:,:,1] = rocks * 255
+    Rover.vision_image[:,:,2] = nav_terrain * 255
         
     
 
@@ -157,7 +157,7 @@ def perception_step(Rover):
 
     # 8) Convert rover-centric pixel positions to polar coordinates
     # Update Rover pixel distances and angles
-    Rover.nav_dists, Rover.nav_angles = rover_coords(Rover)
+    Rover.nav_dists, Rover.nav_angles = rover_coords(nav_terrain)
     
     
  
