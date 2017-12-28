@@ -43,9 +43,21 @@ This is the README in markdown format which is based on the template provided.
 
 ### Notebook Analysis
 #### 1. Run the functions provided in the notebook on test images (first with the test data provided, next on data you have recorded). Add/modify functions to allow for color selection of obstacles and rock samples.
-Here is an example of how to include an image in your writeup.
 
-![alt text][image1]
+    * The first step involved is the choice of a random image from the test images dataset
+      ![Random test image](https://drive.google.com/open?id=1qdMtdqcu-tFdT2yLsTlQ4v1IHU7qsdos)
+     
+    * Second, we perform perspective transform on the image to change the viewing position to a top down
+      ![Perspective transform applied](https://drive.google.com/open?id=14jCI27wg_2kixK0xvlEaO5m0QJ8Etnms)
+      
+    * Third, we apply the thresholding logic to detect navigable terrain, rocks and obstacles
+      ![Color thresholding applied](https://drive.google.com/open?id=1JbSfHb4tsCAZ_fNQu17Adi5Xdu5_ATGw)
+      
+    * Fourth, the thresholded transformed image is then viewed in rover coordinate system. Also, we need the polar coordinate system to 
+    get the distance of navigable terrain and the mean angle at which the rover will steer itself
+      ![Thresholded image as viewed in rover coordinate frame of reference and subsequenty the polar coordinate system of the same]
+
+
 
 #### 1. Populate the `process_image()` function with the appropriate analysis steps to map pixels identifying navigable terrain, obstacles and rock samples into a worldmap.  Run `process_image()` on your test data using the `moviepy` functions provided to create video output of your result. 
 And another! 
